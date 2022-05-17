@@ -8,5 +8,6 @@ dependencies:
   - pylint=2.12.*
   - pytest=7.1.*
   - python=3.10.*
+  - requests=2.27.*
   - seaborn=0.11.*
   - yapf=0.31.*
