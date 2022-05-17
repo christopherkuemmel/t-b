@@ -1,0 +1,12 @@
+name: tb
+channels:
+  - defaults
+dependencies:
+  - matplotlib=3.5.*
+  - numpy=1.21.*
+  - pandas=1.4.*
+  - pylint=2.12.*
+  - pytest=7.1.*
+  - python=3.10.*
+  - seaborn=0.11.*
+  - yapf=0.31.*
