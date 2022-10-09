@@ -43,7 +43,7 @@ CURRENCIES = [
 ]
 
 
-def create_logger(output_path: str = '.data/crawl') -> logging.Logger:
+def create_logger(output_path: str = './data/crawl') -> logging.Logger:
     """Creates and returns a logger.
 
     Args:

@@ -27,7 +27,7 @@ CURRENCIES = [
 ]
 
 
-def create_logger(output_path: str = '.data/crawl') -> logging.Logger:
+def create_logger(output_path: str = './data/crawl') -> logging.Logger:
     """Creates and returns a logger.
 
     Args:
@@ -110,4 +110,3 @@ def crawl():
 if __name__ == "__main__":
     LOGGER = create_logger()
     crawl()
-
