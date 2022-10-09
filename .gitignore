@@ -139,5 +139,5 @@ dmypy.json
 cython_debug/
 
 # local dirs
-data
+data/**
 .vscode
