@@ -3,20 +3,54 @@
 Transformers and Blockchain
 ## Table of Contents
 
-- [Transformers and Blockchain](#t&b)
+- [t&b](#tb)
   - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Usage](#usage)
+  - [Getting Started](#getting-started)
+    - [Installation](#installation)
+    - [Downloading Crypto Data](#downloading-crypto-data)
+    - [Iterate Crypto Data](#iterate-crypto-data)
   - [Contributing](#contributing)
   - [Credits](#credits)
   - [License](#license)
 
-## Installation
+## Getting Started
 
-## Usage
+### Installation
 
-1. `conda env create -f environment.yml`
+1. `pip install -r requirements.txt`
 
+### Downloading Crypto Data
+
+```python
+from tnb.data.cryptodatarequest import CryptoDataRequest
+
+currency = 'BTC/USDT'
+exchange ='BTC/USDT'
+start_date = 1495032490  # miliseconds from epoch
+end_date = 1652798890  # miliseconds from epoch
+
+cdr = CryptoDataRequest()
+crypto_df = cdr.request(currency, exchange, start_date, end_date)
+```
+### Iterate Crypto Data
+
+```python
+crypto_data = pd.read_csv('crypto_data.csv')
+
+loader_params = {
+  'batch_size': 1,
+  'shuffle': False,
+}
+
+historical_seq_len = 50
+mapping = ['open', 'high', 'low', 'close', 'amount']
+
+ccd = CryptoCandleDataset(crypto_data, historical_seq_len, mapping)
+train_loader = DataLoader(ccd, **loader_params)
+
+for step, batch in enumerate(train_loader):
+    # TODO: do your thing!
+```
 ## Contributing
 
 ## Credits
